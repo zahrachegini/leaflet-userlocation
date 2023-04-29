@@ -49,9 +49,9 @@ const Basic = () => {
             position={[location.coordinates.lat, location.coordinates.lng]}
             icon={markerIcon}
           >
-            {/* <Popup>
-              <b>First Marker</b>
-            </Popup> */}
+            <Popup>
+              {[location.coordinates.lat, location.coordinates.lng]}
+            </Popup>
           </Marker>
         )}
       </MapContainer>
