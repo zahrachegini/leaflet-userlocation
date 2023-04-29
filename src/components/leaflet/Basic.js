@@ -50,7 +50,7 @@ const Basic = () => {
             icon={markerIcon}
           >
             <Popup>
-              {[location.coordinates.lat, location.coordinates.lng]}
+              {[location.coordinates.lat, ",", location.coordinates.lng]}
             </Popup>
           </Marker>
         )}
