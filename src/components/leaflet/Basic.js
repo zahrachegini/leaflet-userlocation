@@ -1,4 +1,3 @@
-import { Map } from "leaflet";
 import React, { useRef } from "react";
 import { useState } from "react";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
@@ -25,7 +24,7 @@ const Basic = () => {
       mapRef.current.leafletElement.flyTo(
         [location.coordinates.lat, location.coordinates.lng],
         ZOOM_LEVEL,
-        { animate: true }
+        { animate: { duration: 1 } }
       );
     } else {
       alert(location.error.message);
@@ -50,9 +49,9 @@ const Basic = () => {
             position={[location.coordinates.lat, location.coordinates.lng]}
             icon={markerIcon}
           >
-            <Popup>
+            {/* <Popup>
               <b>First Marker</b>
-            </Popup>
+            </Popup> */}
           </Marker>
         )}
       </MapContainer>
