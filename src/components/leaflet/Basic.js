@@ -22,7 +22,11 @@ const Basic = () => {
 
   const showMyLocation = () => {
     if (location.loaded && !location.error) {
-      mapRef.current.leafletElement.flyTo([], ZOOM_LEVEL, { animate: true });
+      mapRef.current.leafletElement.flyTo(
+        [location.coordinates.lat, location.coordinates.lng],
+        ZOOM_LEVEL,
+        { animate: true }
+      );
     } else {
       alert(location.error.message);
     }
@@ -52,6 +56,12 @@ const Basic = () => {
           </Marker>
         )}
       </MapContainer>
+
+      <div>
+        <div>
+          <button onClick={showMyLocation}>Locate Me</button>
+        </div>
+      </div>
     </div>
   );
 };
